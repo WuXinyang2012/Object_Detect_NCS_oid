@@ -35,9 +35,11 @@ After the regular installation of OpenVINO, you need to install additionally sup
     rm 97-usbboot.rules    
 
 Then set up the environment:
+
     source /(path_to_OpenVINO)/bin/setupvars.sh     
 
-Then first download frozen model.  
+Then first download frozen model.
+
     wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz        
     tar -zxvf ssd_mobilenet_v1_coco_2017_11_17.tar.gz    
     cd /(path_to_OpenVINO)/deployment_tools/model_optimizer    
@@ -59,7 +61,8 @@ Then we can start transfer learning with tensorflow API.
     git clone https://github.com/tensorflow/models.git    
     cd models/research/object_detection
     python train.py --ligtostderr --pipeline_config_path=/(path_to_your_config)/ssd_mobilenet_v1_retrain.config --train_dir=/(path_to_log)
-During training, you can use tensorboard to monitor the transfer learning:    
+During training, you can use tensorboard to monitor the transfer learning:
+
     tensorboard --logdir=/(path_to_log)
 
 
