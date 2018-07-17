@@ -30,4 +30,11 @@ Assume you have already set up OpenVINO well (notice that the envirnoment variab
     wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz
     tar -zxvf ssd_mobilenet_v1_coco_11_06_2017.tar.gz
     cd /(path_to_OpenVINO)/deployment_tools/model_optimizer
+    python3 mo_tf.py --input_model /(path_to_your_frozen_model)/frozen_inference_graph.pb --output_dir /(Specify_your_path) --tensorflow_use_custom_operations_config extensions/front/tf/ssd_support.json --output="detection_boxes,detection_scores,num_detections" --data_type FP16
+    cd /(path_to_OpenVINO)/deployment_tools/inference_engine/samples/python_samples/
+    python3 object_detection_demo_ssd_async.py -i cam -m /(path_to_your_IRmodels)/frozen_inference_graph.xml -d MYRIAD
+
+Then you can find a detect demo with ~9 FPS.
+
+
 
