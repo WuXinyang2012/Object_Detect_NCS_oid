@@ -23,6 +23,7 @@ One example .sh is shown in combine_tfrecord.sh.
 
 #2, Use OpenVIO to compile ssd_mobinet_v1 for VPU usage.  
 After the regular installation of OpenVINO, you need to install additionally support for NCS
+
     cat <<EOF > 97-usbboot.rules    
     SUBSYSTEM=="usb", ATTRS{idProduct}=="2150", ATTRS{idVendor}=="03e7", GROUP="users", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"    
     SUBSYSTEM=="usb", ATTRS{idProduct}=="f63b", ATTRS{idVendor}=="03e7", GROUP="users", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"    
