@@ -9,13 +9,8 @@ Tensorflow (version>1.5)
 Tensorflow object detect API
 OpenVINO SDK (version = R2018 R2)
 ***
-All the scripts are tested with Python3.6 + Tensorflow-1.7.0.  
-##2, Download customized dataset and transform into tfrecord;  
-##3, Set up OpenVINO SDK; 
-##4, Introduce how to compile ssd_mobinet_v1 for NCS with OpenVINO;  
-##5, Transfer Learning on ssd_mobinet_v1.  
 
-#1, Download customized dataset and transform into tfrecord 
+#1, Download customized dataset and transform into tfrecord
 
     python3 oid_tfrecord_by_name.py 	
 
@@ -24,9 +19,10 @@ This script will cost more time when first run, since it needs to download addit
 
 After downloading all categories, you need to merge them into one directory for usage.  
 One example .sh is shown in combine_tfrecord.sh. 
+****
 
 #2, Use OpenVIO to compile ssd_mobinet_v1 for VPU usage.  
-After the regular installation of OpenVINO, you need to install additionally support for NCS:   
+After the regular installation of OpenVINO, you need to install additionally support for NCS
     cat <<EOF > 97-usbboot.rules    
     SUBSYSTEM=="usb", ATTRS{idProduct}=="2150", ATTRS{idVendor}=="03e7", GROUP="users", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"    
     SUBSYSTEM=="usb", ATTRS{idProduct}=="f63b", ATTRS{idVendor}=="03e7", GROUP="users", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"    
@@ -37,8 +33,8 @@ After the regular installation of OpenVINO, you need to install additionally sup
     sudo ldconfig    
     rm 97-usbboot.rules    
 
-Then set up the environment:    
-	source /(path_to_OpenVINO)/bin/setupvars.sh     
+Then set up the environment:
+    source /(path_to_OpenVINO)/bin/setupvars.sh     
 
 Then first download frozen model.  
     wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz        
