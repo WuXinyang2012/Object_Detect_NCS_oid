@@ -1,15 +1,10 @@
 item {
-  name: "/m/014j1m"
-  id: 1
-  display_name: "Apple"
-}
-item {
-  name: "/m/0cyhj_"
-  id: 2
-  display_name: "Orange"
-}
-item {
   name: "/m/09qck"
-  id: 3
+  id: 1
   display_name: "Banana"
+}
+item {
+  name: "/m/0fj52s"
+  id: 1
+  display_name: "Carrot"
 }
