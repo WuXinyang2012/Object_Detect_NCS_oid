@@ -13,7 +13,7 @@ from urllib import request
 sys.path.append("/output/models/research/")
 from object_detection.utils import dataset_util
 
-desired_category="Carrot" #here specify the name of category you want.
+desired_category=sys.argv[1] #here specify the name of category you want.
   
 class open_image_dataset:
     classname_csv="https://storage.googleapis.com/openimages/2018_04/class-descriptions-boxable.csv"
